@@ -1,0 +1,30 @@
+/**
+ * Home page styles
+ * 
+ */
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 24px;
+    height: 41px;
+    /* Inside auto layout */
+    flex: none;
+    margin: 0;
+    order: 0;
+    font-size: 32px;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+  .content-wrapper {
+    padding: 0 24px;
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+/**
+ * Email details modal styles
+ * 
+ */
+.wrapper {
+  /* Inbox - Open Email */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100vw;
+  height: 100vh;
+
+  .backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: rgba(76, 87, 100, 0.8);
+  }
+
+  .elements-panel {
+    /* Element_Panel */
+    z-index: 1;
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 32px;
+    max-width: 752px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+
+    .frame-424 {
+      /* Frame 424 */
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px;
+      gap: 40px;
+
+      width: 688px;
+      height: 19px;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      align-self: stretch;
+      flex-grow: 0;
+
+      .frame-426 {
+        /* Frame 426 */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 12px;
+        cursor: pointer;
+        height: 19px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      }
+
+      .frame-425 {
+        /* Frame 425 */
+
+        /* Auto layout */
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 40px;
+
+        width: 274px;
+        height: 19px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+.title {
+  /* Wave hello with video, reactions and more now in huddles */
+
+  height: 26px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+
+  color: #121829;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.content {
+  width: 688px;
+  height: 54px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #4b5563;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}

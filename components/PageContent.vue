@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h3 class="heading">Inbox</h3>
+    <h3 class="heading">{{ title }}</h3>
     <div class="top-nav">
       <div class="checkbox-container">
         <input class="checkbox" type="checkbox" :checked="isAllSelected" @change="handleToggleAll" />
@@ -18,7 +18,14 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import { useEmailStore } from "~/store/email";
 import type { Email } from "~/types";
+
+const emailStore = useEmailStore();
+
+const { openEmail, onOpen, onRead, onDismissModal, read } = emailStore;
+
+const { selectedIds } = storeToRefs(emailStore);
 
 const handleSelect = (email: Email) => {
   if (selectedIds.value.includes(email.id)) {
@@ -31,16 +38,19 @@ const handleSelect = (email: Email) => {
 };
 
 const props = defineProps<{
-  emails: Email[];
-  read: Record<string, boolean>;
-  onOpen: (email: Email) => void;
+  title: string;
+  emails: Email[]
 }>();
 
 const handleOpen = (email: Email) => {
-  props.onOpen(email);
+  onOpen(email);
 };
-const isAllSelected = computed(() =>
-  props.emails.every((email) => selectedIds.value.includes(email.id))
+const isAllSelected = computed(() => {
+  if (props.emails.length === 0) {
+    return false;
+  }
+  return props.emails.every((email) => selectedIds.value.includes(email.id))
+}
 );
 
 const handleToggleAll = () => {
@@ -51,85 +61,8 @@ const handleToggleAll = () => {
   }
 };
 
-const selectedIds = ref<string[]>([]);
 </script>
 
-<style scoped lang="scss">
-.wrapper {
-  flex: 1;
-}
-
-.heading {
-  /* Frame 418 */
-
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0px 24px;
-
-  width: 1021px;
-  height: 41px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-}
-
-.top-nav {
-  /* Top_Nav */
-
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px 24px;
-  gap: 20px;
-  margin-bottom: 24px;
-  height: 20px;
-
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-
-  .checkbox-container {
-    /* Checkbox */
-
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 12px;
-
-    height: 20px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-
-    .checkbox {
-      /* Rectangle 6 */
-
-      box-sizing: border-box;
-
-      width: 20px;
-      height: 20px;
-
-      background: #ffffff;
-      border: 1px solid #cad6e4;
-      border-radius: 5px;
-
-      /* Inside auto layout */
-      flex: none;
-      order: 0;
-      flex-grow: 0;
-    }
-  }
-}
+<style lang="scss" scoped>
+@use '~/assets/scss/layout/page-content';
 </style>

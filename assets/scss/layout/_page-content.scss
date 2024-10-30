@@ -1,0 +1,83 @@
+/**
+ * Page content styles
+ * 
+ */
+
+.wrapper {
+  flex: 1;
+}
+
+.heading {
+  /* Frame 418 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 24px;
+
+  height: 41px;
+
+  /* Inside auto layout */
+  flex: none;
+  margin:0;
+  order: 0;
+  font-size: 32px;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.top-nav {
+  /* Top_Nav */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 24px;
+  gap: 20px;
+  margin-bottom: 24px;
+  height: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+  .checkbox-container {
+    /* Checkbox */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+
+    height: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    .checkbox {
+      /* Rectangle 6 */
+
+      box-sizing: border-box;
+
+      width: 20px;
+      height: 20px;
+
+      background: #ffffff;
+      border: 1px solid #cad6e4;
+      border-radius: 5px;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+}

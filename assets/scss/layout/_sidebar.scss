@@ -1,0 +1,137 @@
+/**
+ * Sidebar styles
+ * 
+ */
+.side-bar-container {
+  /* Nav Menu */
+
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+  gap: 173px;
+
+  width: 260px;
+
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px -1px;
+
+  .menu-item {
+    /* Frame 158 */
+    /* Auto layout */
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 12px;
+    border-radius: 54px;
+    color: black;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+    .menu-item-content {
+      /* Frame 420 */
+
+      /* Auto layout */
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 12px;
+
+      /* Inside auto layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+
+    &.active {
+      background: #d6e2fb;
+    }
+
+    &:hover {
+      background: #d6e2fb;
+      cursor: pointer;
+    }
+  }
+
+  .footer {
+    width: 260px;
+  }
+
+  .box {
+    /* Top */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 32px;
+
+    margin: 0 auto;
+    width: 260px;
+    height: 160px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+
+  .button-container {
+    /* Frame 419 */
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 10px;
+    gap: 12px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+  }
+}
+
+.logo-container {
+  /* Frame 164 */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 24px;
+  gap: 40px;
+
+  width: 260px;
+  height: 20px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}

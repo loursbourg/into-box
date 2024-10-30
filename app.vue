@@ -1,34 +1,22 @@
 <template>
     <div class="app-container">
         <Sidebar />
-        <NuxtPage :read="read" :onOpen="onOpen"/>
+        <NuxtPage :read="read" :onOpen="emailStore.onOpen" />
     </div>
-    <EmailDetailsModal v-if="openEmail" :onDismiss="onDismissModal" :email="openEmail" :onRead="onRead" />
+    <EmailDetailsModal v-if="openEmail" :onDismiss="emailStore.onDismissModal" :email="openEmail"
+        :onRead="emailStore.onRead" />
 </template>
 
 <script setup lang="ts">
-import { defineProps, reactive, ref } from "vue";
-import type { Email } from "./types";
+import { useEmailStore } from '~/store/email';
 
-const openEmail = ref();
+const emailStore = useEmailStore();
 
-const onDismissModal = () => {
-    openEmail.value = undefined;
-};
+const { openEmail, read } = storeToRefs(emailStore);
 
-const read = reactive<Record<string, boolean>>({});
-
-const onOpen = (email: Email) => {
-    openEmail.value = email;
-}
-
-const onRead = () => {
-    read[openEmail.value.id] = true;
-    openEmail.value = undefined;
-}
 </script>
 
-<style>
+<style lang="scss" scoped>
 .app-container {
     display: flex;
     flex: 1;
